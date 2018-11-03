@@ -14,6 +14,7 @@
 		18A3B0BB218DE0AA00FF6F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A3B0B9218DE0AA00FF6F9D /* LaunchScreen.storyboard */; };
 		18A3B0C4218DE17F00FF6F9D /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3B0C2218DE17F00FF6F9D /* ThreadViewController.swift */; };
 		18A3B0C5218DE17F00FF6F9D /* CustomThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3B0C3218DE17F00FF6F9D /* CustomThread.swift */; };
+		18A3B0C7218DEB8500FF6F9D /* Dispatch+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3B0C6218DEB8500FF6F9D /* Dispatch+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		18A3B0BC218DE0AA00FF6F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A3B0C2218DE17F00FF6F9D /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		18A3B0C3218DE17F00FF6F9D /* CustomThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomThread.swift; sourceTree = "<group>"; };
+		18A3B0C6218DEB8500FF6F9D /* Dispatch+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		18A3B0AF218DE0A800FF6F9D /* ThreadDependence */ = {
 			isa = PBXGroup;
 			children = (
+				18A3B0C6218DEB8500FF6F9D /* Dispatch+Extension.swift */,
 				18A3B0C3218DE17F00FF6F9D /* CustomThread.swift */,
 				18A3B0C2218DE17F00FF6F9D /* ThreadViewController.swift */,
 				18A3B0B0218DE0A800FF6F9D /* AppDelegate.swift */,
@@ -143,6 +146,7 @@
 			files = (
 				18A3B0C5218DE17F00FF6F9D /* CustomThread.swift in Sources */,
 				18A3B0B3218DE0A800FF6F9D /* ViewController.swift in Sources */,
+				18A3B0C7218DEB8500FF6F9D /* Dispatch+Extension.swift in Sources */,
 				18A3B0B1218DE0A800FF6F9D /* AppDelegate.swift in Sources */,
 				18A3B0C4218DE17F00FF6F9D /* ThreadViewController.swift in Sources */,
 			);

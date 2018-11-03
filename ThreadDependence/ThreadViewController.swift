@@ -34,6 +34,9 @@ class ThreadViewController: UIViewController {
     
     fileprivate var globalData: UInt = 0
     
+    private var token: String = ""
+    
+    private let preQueue = DispatchQueue(label: "rrrrrrr");
     
 
     override func viewDidLoad() {
@@ -57,7 +60,11 @@ class ThreadViewController: UIViewController {
         connect()
         startPreview(count: 1)
         startPreview(count: 2)
-        startPreview(count: 3)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.startPreview(count: 3)
+        }
+        
     }
     
     
@@ -345,12 +352,12 @@ extension ThreadViewController{
             print("connect current thread : \(Thread.current) label: \(queue.label)");
             //            Thread.sleep(forTimeInterval: 2)
             
-            Thread.sleep(forTimeInterval: 2)
+            Thread.sleep(forTimeInterval: 1)
             DispatchQueue.main.async(execute: {
                 
                 
                 print("connect finished unlock: \(Thread.current)");
-                
+                self.token = "cfUYhfe83ieYR792kFWQWFW924"
                 self.queueGroup.leave()
 //                self.lock.signal();
 
@@ -361,17 +368,27 @@ extension ThreadViewController{
     
     func startPreview(count: NSInteger){
         
-        let queue = DispatchQueue(label: "rrrrrrr");
-        queue.async {
-            let _ = self.queueGroup.wait(timeout: DispatchTime.distantFuture)
-//            let _ = self.lock.wait(timeout: DispatchTime.distantFuture)
-            print("startPreview task run :\(queue.label) count: \(count)");
-            Thread.sleep(forTimeInterval: 2)
-            DispatchQueue.main.async(execute: {
-                print("startPreview task run on main------count: \(count)");
-            })
-
+        if(token.count != 0){
+            
+            print("start normal task count: \(count)------ ")
+            
+        }else{
+            
+            preQueue.async {[weak self] in
+                guard let strongSelf = self else{return}
+                let _ = strongSelf.queueGroup.wait(timeout: DispatchTime.distantFuture)
+                //            let _ = self.lock.wait(timeout: DispatchTime.distantFuture)
+                print("startPreview task run count: \(count)");
+                Thread.sleep(forTimeInterval: 2)
+                DispatchQueue.main.async(execute: {
+                    print("startPreview task run on main------count: \(count)");
+                })
+                
+            }
+            
         }
+        
+
 
         
         
